@@ -1,0 +1,25 @@
+Akun : -> Username, Password, Nama
+- Donatur -> Nomor Rekening -> Email -> No HP
+- Campaigner -> Nomor Rekening -> Email -> KTP -> No HP ->
+- Admin
+
+
+Campaign :
+- Kategori
+- Konten
+- Judul
+- Tujuan
+- Target Donasi
+-
+
+
+Kategori :
+- Bencana Alam (0%)
+- Zakat (0%)
+- Beasiswa & Pendidikan
+- Birthday Fundraising
+- Menolong Hewan
+- Rumah Ibadah/Keagamaan
+- Difabel
+- Sarana & Infrastruktur
+- Produk, Seni & Inovasi
