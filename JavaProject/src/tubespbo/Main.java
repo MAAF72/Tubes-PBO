@@ -18,21 +18,64 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Database db = new Database();
-        db.connect();
-        db.update("UPDATE TASK SET Description='AHAHA' WHERE ID=1");
-        try (ResultSet rs = db.query("SELECT * FROM Task")) {
-            while (rs != null && rs.next()) {
-                System.out.println(rs.getInt("ID") + " " + rs.getString("Name"));
-                try (ResultSet rs2 = db.query("SELECT * FROM SUBMISSION WHERE TaskID=" + rs.getInt("ID"))) {
-                    while (rs2 != null && rs2.next()) {
-                        System.out.println(rs2.getInt("ID") + " " + rs2.getInt("TaskID") + " " + rs2.getString("Language") + " " + rs2.getString("Status") + " " + rs2.getString("Score"));
-                    }
-                }
-            }
-        } catch (SQLException ex) {
-            System.out.println("Fail Query z :" + ex.getMessage());
-        }
+        Donatur dntr1 = new Donatur("Irfan","irfang@gmail.com","081234568910",100000);
+        Donatur dntr2 = new Donatur("Fatih","maaf@gmail.com","081234568910",50000);
+        Donatur dntr3 = new Donatur("Yudhis","lyudhistira@gmail.com","081234568910",75000);
+        Personal pnrm1 = new Personal("Anas");
+        Lembaga pnrm2 = new Lembaga("Lembaga A");
+        Donasi dns1 = new Donasi("Donasi 1");
+        Donasi dns2 = new Donasi("Donasi 2");
+        EventGalangDana ev1 = new EventGalangDana();
+        //add
+        dns1.addDonatur(dntr1);
+        dns1.addDonatur(dntr2);
+        dns2.addDonatur(dntr3);
+        dns1.addPenerima(pnrm1);
+        dns2.addPenerima(pnrm2);
+        ev1.createDonasi(dns1);
+        ev1.createDonasi(dns2);
+        //show
+        dns1.showDonatur();
+        dns1.showPenerima();
+        dns2.showDonatur();
+        dns2.showPenerima();
+        ev1.showDonasi();
     }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
